@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script>
+        function Person(age) {
+
+            this.age = age;
+
+        }
+
+        function Student() {
+
+
+        }
+        var person = new Person(10); //creating new person's object
+        Student.prototype = person; //inheriting person property to student
+        var oldAge = person.age;
+        var student = new Student();
+        student.__proto__.age = 12; //updating person age from Student object 
+        var newAge = person.age;
+
+        alert("Person old age=" + oldAge + "\nNew age=" + newAge);
+    </script>
+</head>
+
+</html>
